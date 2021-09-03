@@ -1,13 +1,47 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: "Poppins", sans-serif;
+}
+.swiper-slide-home {
+  max-width: 90%;
+  transition: all 0.5s;
+}
+.swiper-slide-home:hover {
+  transform: scale(1.1);
+}
+.mySwiperHome {
+  width: 70em;
+  max-width: 98%;
+  margin-inline: auto;
+  margin-block: 1.5em;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: white;
+  width: 2.8em !important;
+  height: 2.8em !important;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: black;
+  font-size: 1.5em !important;
+  font-weight: 700 !important;
+}
+
+.landing-swiper {
+  width: 100%;
+}
+
+.landing-swiper-slide {
+  width: 100%;
 }
