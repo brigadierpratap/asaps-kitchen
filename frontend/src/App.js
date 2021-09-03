@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
 import styled from "styled-components";
 import Login from "./Components/AuthModal/Login";
 import Signup from "./Components/AuthModal/Signup";
@@ -55,6 +60,8 @@ function App() {
             />
             <Search />
           </Route>
+
+          <Redirect to="/" />
         </Switch>
       </AppContainer>
     </Router>

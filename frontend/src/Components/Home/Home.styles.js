@@ -149,6 +149,7 @@ export const HomeBottomCont = styled.div`
         max-width: 100%;
         width: 18em;
         margin-bottom: 1em;
+        height: 15em;
       }
       .title {
         font-size: 1.1em;
@@ -184,4 +185,85 @@ export const CarouselText = styled.span`
   position: absolute;
   z-index: 500;
   color: white;
+`;
+
+export const HomeTabsCont = styled.div`
+  max-width: 95%;
+  margin-inline: auto;
+  width: 70em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+
+  .tab1 {
+    width: 10em;
+    position: relative;
+    margin-right: 1em;
+    cursor: pointer;
+    .inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 3.5em;
+        margin-right: 1em;
+      }
+      span {
+        font-size: 1.1em;
+        font-weight: 500;
+        color: ${props => (props.active === 0 ? "#81c784" : "black")};
+        transition: all 0.3s;
+      }
+    }
+    .border {
+      position: absolute;
+      width: ${props => (props.active === 0 ? "100%" : "0%")};
+      height: 2px;
+      background-color: #81c784;
+      top: 115%;
+      border-radius: 1em;
+      transition: width 0.3s;
+    }
+  }
+  .tab2 {
+    width: 10em;
+    position: relative;
+    margin-left: 1em;
+    cursor: pointer;
+    .inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 3.5em;
+        margin-right: 1em;
+      }
+      span {
+        font-size: 1.1em;
+        font-weight: 500;
+        color: ${props => (props.active === 1 ? "#81c784" : "black")};
+        transition: all 0.3s;
+      }
+    }
+    .border {
+      position: absolute;
+      width: ${props => (props.active === 1 ? "100%" : "0%")};
+      height: 2px;
+      background-color: #81c784;
+      top: 115%;
+      right: 0;
+      border-radius: 1em;
+      transition: width 0.3s;
+    }
+  }
+`;
+
+export const KitchenCont = styled.div`
+  max-width: 95%;
+  width: 70em;
+  margin-inline: auto;
+  margin-top: 3em;
+  display: flex;
+  flex-wrap: wrap;
 `;
