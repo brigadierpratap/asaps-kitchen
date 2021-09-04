@@ -18,10 +18,11 @@
 <li>NodeJS</li>
 <li>Express</li>
 <li>Amazon S3</li>
-<li>Firebase auth</li>
+<li>JWT</li>
 <h1>Links:</h1>
-<li>Project Description:</li>
-<li>Deployment Link:</li>
+<li>Project Description: https://docs.google.com/presentation/d/1F1oSX1pQv2iAsOO84rAE2zeZQFXPvP6n/edit?usp=sharing&ouid=109683268359232121600&rtpof=true&sd=true
+</li>
+<li>Deployment Link: http://ec2-13-232-243-114.ap-south-1.compute.amazonaws.com/home</li>
 <h3>User Table:</h3>
 ![WhatsApp Image 2021-09-05 at 03 34 27](https://user-images.githubusercontent.com/62637676/132109110-e2c09ba9-b823-4ed7-8b80-8d5aaacd3a4e.jpeg)
 <h3>Address Table:</h3>
