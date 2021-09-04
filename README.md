@@ -25,10 +25,10 @@
 </li>
 <li>Deployment Link: http://ec2-13-232-243-114.ap-south-1.compute.amazonaws.com/home</li>
 <h3>User Table:</h3>
-<img src ="(https://user-images.githubusercontent.com/62637676/132109110-e2c09ba9-b823-4ed7-8b80-8d5aaacd3a4e.jpeg)" alt= "User Table">
+<img src = "https://user-images.githubusercontent.com/62637676/132109110-e2c09ba9-b823-4ed7-8b80-8d5aaacd3a4e.jpeg" alt= "User Table">
 <h3>Address Table:</h3>
-![WhatsApp Image 2021-09-05 at 03 34 56](https://user-images.githubusercontent.com/62637676/132109135-7e5cabbb-7a30-4e05-8398-fb9f71d846aa.jpeg)
+<img src = "https://user-images.githubusercontent.com/62637676/132109135-7e5cabbb-7a30-4e05-8398-fb9f71d846aa.jpeg" alt = "Address Table">
 <h3>Restaurant's Table:</h3>
-![WhatsApp Image 2021-09-05 at 03 35 46](https://user-images.githubusercontent.com/62637676/132109140-c1e1139d-9dc6-4e69-be95-ccbc76d965bf.jpeg)
+<img src = "https://user-images.githubusercontent.com/62637676/132109140-c1e1139d-9dc6-4e69-be95-ccbc76d965bf.jpeg" alt = "Restaurant's Table">
 <h3>Orders:</h3>
-![WhatsApp Image 2021-09-05 at 03 36 17](https://user-images.githubusercontent.com/62637676/132109348-479487ca-c871-4825-8d0a-de4cce737639.jpeg)
+<img src = "https://user-images.githubusercontent.com/62637676/132109348-479487ca-c871-4825-8d0a-de4cce737639.jpeg" alt = "Restaurant's Table">
