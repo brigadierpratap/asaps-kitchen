@@ -10,7 +10,16 @@ import clock from "../../Assets/Images/clock.svg";
 
 function KitchenCard(props) {
   return (
-    <KitechenCardCont to={`/kitchen/${props.kitchen.id}`}>
+    <KitechenCardCont
+      to={`/kitchen/${props.kitchen.id}`}
+      data-aos={
+        (props.ind + 1) % 3 === 0
+          ? "zoom-in-left"
+          : (props.ind + 1) % 2 == 0
+          ? "zoom-in"
+          : "zoom-in-right"
+      }
+    >
       <div style={{ height: "17em", position: "relative", overflow: "clip" }}>
         <KCardImg src={props.kitchen.image} alt={props.kitchen.name} />
         <span className="offer">

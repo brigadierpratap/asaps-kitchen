@@ -60,7 +60,7 @@ function Schedule(props) {
       </ScHeader>
       {props.kitchens.info.map(kt => {
         return (
-          <SCard key={kt.id}>
+          <SCard key={kt.id} data-aos="fade-in-left" data-aos-duration="1000">
             <ScLeft>
               <img src={kt.proimg} alt="food" />
             </ScLeft>
