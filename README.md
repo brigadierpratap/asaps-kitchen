@@ -18,6 +18,7 @@
 <li>NodeJS</li>
 <li>Express</li>
 <li>Amazon S3</li>
+<li>Amazon EC2</li>
 <li>JWT</li>
 <h1>Links:</h1>
 <li>Project Description: https://docs.google.com/presentation/d/1F1oSX1pQv2iAsOO84rAE2zeZQFXPvP6n/edit?usp=sharing&ouid=109683268359232121600&rtpof=true&sd=true
