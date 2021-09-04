@@ -23,3 +23,19 @@ Scalability:
    2. Another plan of building our own cloud kitchen is in the making
    
    3.  And at last, we hope to expand our services to every city of India and if everything goes well, we might launch our services globally.
+
+Tech Stacks Required:
+
+1. AstraDB
+2. ReactJS
+3. NodeJS
+4. Express
+5. Amazon S3
+6. Firebase auth
+ 
+Links:
+
+1.Project Description:
+
+2.Deployment Link:
+
