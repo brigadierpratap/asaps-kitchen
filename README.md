@@ -32,3 +32,5 @@
 <img src = "https://user-images.githubusercontent.com/62637676/132109140-c1e1139d-9dc6-4e69-be95-ccbc76d965bf.jpeg" alt = "Restaurant's Table">
 <h3>Orders:</h3>
 <img src = "https://user-images.githubusercontent.com/62637676/132109348-479487ca-c871-4825-8d0a-de4cce737639.jpeg" alt = "Restaurant's Table">
+<h3>Queries after data fetch:</h3>
+<img src = "https://user-images.githubusercontent.com/62637676/132110424-583ef4c6-638a-441a-a83b-8ba4025e66f9.jpeg" alt = "Queries">
