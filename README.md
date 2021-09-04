@@ -1,22 +1,22 @@
-Problems Addressed:
+##Problems Addressed:
 
    1. There are few or no application in the market that provides scheduled pre order facility.
   
    2. Young professionals/ Students/ Office People face trouble finding home-made food.
   
-Overview
+##Overview
 
    1. A platform that bridges the gap between home chefs who want to step into the food business but don't have enough resources to run a restaurant, and consumers who want to eat      light, delicious & nutritious food that reminds them of their homes.
    
    2. Used AstraDB to store information about the users, data about nearby Kitchens, their Menu, and their order details
     
-Goals:
+##Goals:
 
    1.  There has been a considerable emergence of remote and centralized kitchens, with a changing market. It provides the easiest method for users to get the best services according to their needs.
 
    2. A big database of local information in different regions.
    
-Scalability:
+##Scalability:
 
    1. We plan on developing an Android application too for our platform, to increase the user base.
     
