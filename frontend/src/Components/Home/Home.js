@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, EffectFade } from "swiper";
 import "swiper/swiper-bundle.css";
 import "swiper/components/navigation/navigation.min.css";

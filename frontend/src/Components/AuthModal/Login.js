@@ -11,15 +11,25 @@ import {
 import cross from "../../Assets/Images/cross.svg";
 import loginIcon from "../../Assets/Images/login.svg";
 import googlelogo from "../../Assets/Images/google-logo.png";
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { updateUserInfoThunk } from "../../Redux/actions/ActionCreator";
+
+const mapDispatchToProps = dispatch => ({
+  updateUser: data => dispatch(updateUserInfoThunk(data)),
+});
 
 function Login(props) {
   const [email, setEmail] = useState("");
   const [validEmail, setValidEmail] = useState(true);
   const [password, setPassword] = useState("");
+  const [loading, setloading] = useState(false);
+  const [error, seterror] = useState("");
   const backdrop = () => {
     props.setLoginModal(false);
   };
   const handleChange = event => {
+    seterror("");
     if (event.target.name === "email") {
       setEmail(event.target.value);
       var regexp =
@@ -31,7 +41,34 @@ function Login(props) {
       setPassword(event.target.value);
     }
   };
-  const handleSignIn = () => {};
+  const handleSignIn = async e => {
+    if (loading) return;
+    setloading(true);
+    await fetch(process.env.REACT_APP_API_URL + "login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        setloading(false);
+        if (data.status === 1) {
+          localStorage.setItem("jwt", data.message);
+          props.updateUser(data.user);
+          props.history.push("/home");
+          props.setLoginModal(false);
+          props.setIsLoggedIn(true);
+        }
+        if (data.status === -1) throw new Error(data.message);
+      })
+      .catch(err => {
+        seterror(err.message);
+        setloading(false);
+        console.log(err);
+      });
+  };
   return (
     <AuthModal backdrop={backdrop}>
       <Title>
@@ -54,11 +91,13 @@ function Login(props) {
           name="password"
           placeholder="Password"
         />
+        <span style={{ color: "red", fontSize: "0.8em" }}>{error}</span>
+
         <Button color="#81C784" onClick={handleSignIn}>
           <img src={loginIcon} alt="login" />
           Log In
         </Button>
-        <Button color="white" border>
+        <Button color="white" border onClick={e => {}}>
           <img src={googlelogo} alt="login" />
           Continue with Google
         </Button>
@@ -79,4 +118,4 @@ function Login(props) {
   );
 }
 
-export default Login;
+export default withRouter(connect(null, mapDispatchToProps)(Login));

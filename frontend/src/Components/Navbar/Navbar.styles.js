@@ -32,7 +32,7 @@ export const NavLogo = styled(Link)`
 `;
 
 export const NavCollapse = styled.div`
-  display: flex;
+  display: ${props => (props.collapse ? "none" : "flex")};
   justify-content: center;
   width: fit-content;
   margin-left: auto;
@@ -65,4 +65,48 @@ export const Search = styled(Link)`
   align-items: center;
   font-family: inherit;
   font-size: 1em;
+`;
+
+export const NavAccCont = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  img {
+    width: 2.6em;
+    margin-left: 0.5em;
+  }
+  .drop-cont {
+    width: 10em;
+    position: absolute;
+    top: 115%;
+    background-color: white;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    right: 0;
+    border-radius: 0.2em;
+
+    .drop-item {
+      padding-block: 0.2em;
+      width: 100%;
+      text-align: center;
+      color: inherit;
+      text-decoration: none;
+      &:hover {
+        background-color: #81c784;
+      }
+    }
+    .caret {
+      position: absolute;
+      top: -7px;
+      right: 0;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid white;
+      border-right: 4px solid white;
+      border-left: 4px solid transparent;
+    }
+  }
 `;

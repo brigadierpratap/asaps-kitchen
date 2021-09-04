@@ -26,7 +26,7 @@ export const ModalCont = styled.div`
   max-width: 95%;
   background-color: white;
   border-radius: 0.3em;
-  overflow: hidden;
+
   animation: ${popup} 0.27s linear;
 `;
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation } from "swiper";
 import "swiper/swiper-bundle.css";
@@ -9,10 +9,17 @@ import {
   Home2Cont,
   HomeTabsCont,
   KitchenCont,
+  Loader,
   SwiperImage,
 } from "./Home.styles";
 import cutlery from "../../Assets/Images/cutlery.svg";
+import schedule from "../../Assets/Images/schedule.svg";
+import wBZ from "../../Assets/Images/wBZ.gif";
+
 import KitchenCard from "../KitchenCard/KitchenCard";
+import Schedule from "../Schedule/Schedule";
+import { updateKitchenList } from "../../Redux/actions/ActionCreator";
+import { connect } from "react-redux";
 
 SwiperCore.use([Navigation]);
 
@@ -60,9 +67,40 @@ const CarouselObj = [
   },
 ];
 
-function Home2() {
+function Home2(props) {
   const [activeTab, setActiveTab] = useState(0);
-
+  const [restaurants, setRestaurants] = useState([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    if (props.kitchens.info.length === 0)
+      getRestaurants().then(data => {
+        console.log(data);
+      });
+    else {
+      setRestaurants(props.kitchens.info);
+      setLoading(false);
+    }
+  }, []);
+  const getRestaurants = async () => {
+    await fetch(process.env.REACT_APP_API_URL + "/restaurants?city=Allahabad", {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("jwt"),
+        "Content-Type": "application/json",
+      },
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.status === 1) {
+          setRestaurants(data.message);
+          props.updateKitchens(data.message);
+          setLoading(false);
+        } else throw new Error();
+      })
+      .catch(e => {
+        setRestaurants([]);
+        setLoading(false);
+      });
+  };
   return (
     <Home2Cont>
       <CarouselCont>
@@ -113,67 +151,45 @@ function Home2() {
           }}
         >
           <div className="inner">
-            <img src={cutlery} alt="schedule" /> <span>Schedule</span>
+            <img src={schedule} alt="schedule" /> <span>Schedule</span>
           </div>
           <span className="border"></span>
         </div>
       </HomeTabsCont>
-      <KitchenCont>
-        <KitchenCard
-          kitchen={{
-            name: "Pawan's Kitchen",
-            id: "ghjgjfgg23asdsa",
-            image:
-              "https://asapcloud.s3.ap-south-1.amazonaws.com/static_images/food_images/images+(2).jpg",
-            rating: "4.2",
-            offer: "100",
-            tags: "Punjabi,Marwadi",
-            estimate: "100 for one",
-            time: "45mins",
-          }}
-        />
-        <KitchenCard
-          kitchen={{
-            name: "Pawan's Kitchen",
-            id: "ghjgjfgg23asdsa",
-            image:
-              "https://asapcloud.s3.ap-south-1.amazonaws.com/static_images/food_images/images+(2).jpg",
-            rating: "4.2",
-            offer: "100",
-            tags: "Punjabi,Marwadi",
-            estimate: "100 for one",
-            time: "45mins",
-          }}
-        />
-        <KitchenCard
-          kitchen={{
-            name: "Pawan's Kitchen",
-            id: "ghjgjfgg23asdsa",
-            image:
-              "https://asapcloud.s3.ap-south-1.amazonaws.com/static_images/food_images/images+(2).jpg",
-            rating: "4.2",
-            offer: "100",
-            tags: "Punjabi,Marwadi",
-            estimate: "100 for one",
-            time: "45mins",
-          }}
-        />
-        <KitchenCard
-          kitchen={{
-            name: "Pawan's Kitchen",
-            id: "ghjgjfgg23asdsa",
-            image:
-              "https://asapcloud.s3.ap-south-1.amazonaws.com/static_images/food_images/images+(2).jpg",
-            rating: "4.2",
-            offer: "100",
-            tags: "Punjabi,Marwadi",
-            estimate: "100 for one",
-            time: "45mins",
-          }}
-        />
-      </KitchenCont>
+      {activeTab === 0 && (
+        <KitchenCont>
+          {restaurants.length > 0 &&
+            restaurants.map((re, i) => {
+              return (
+                <KitchenCard
+                  kitchen={{
+                    name: re.name,
+                    id: re.id,
+                    image: re.proimg,
+                    rating: re.rating,
+                    offer: re.offer,
+                    tags: re.tags,
+                    estimate: re.price,
+                    time: "45mins",
+                  }}
+                  key={re.id}
+                  ind={i}
+                />
+              );
+            })}
+        </KitchenCont>
+      )}
+      {activeTab === 1 && <Schedule />}
+      {loading && (
+        <Loader>
+          <img src={wBZ} alt="" />
+        </Loader>
+      )}
     </Home2Cont>
   );
 }
-
-export default Home2;
+const mapDispatchToProps = dispatch => ({
+  updateKitchens: data => dispatch(updateKitchenList(data)),
+});
+const mapStateToProps = state => ({ kitchens: state.Kitchens });
+export default connect(mapStateToProps, mapDispatchToProps)(Home2);
