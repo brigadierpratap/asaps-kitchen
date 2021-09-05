@@ -21,9 +21,8 @@
 <li>Amazon EC2</li>
 <li>JWT</li>
 <h1>Links:</h1>
-<li>Project Description: https://docs.google.com/presentation/d/1F1oSX1pQv2iAsOO84rAE2zeZQFXPvP6n/edit?usp=sharing&ouid=109683268359232121600&rtpof=true&sd=true
-</li>
-<li>Deployment Link: http://ec2-13-232-243-114.ap-south-1.compute.amazonaws.com/home</li>
+<li><a href = "https://github.com/brigadierpratap/asaps-kitchen/files/7110671/ASAP.s.Kitchen.pdf">Project Description</a> </li>
+<li><a href = "http://ec2-13-232-243-114.ap-south-1.compute.amazonaws.com/home">Deployment Link</a> </li>
 <h3>User Table:</h3>
 <img src = "https://user-images.githubusercontent.com/62637676/132109110-e2c09ba9-b823-4ed7-8b80-8d5aaacd3a4e.jpeg" alt= "User Table">
 <h3>Address Table:</h3>
